@@ -83,13 +83,23 @@ const mockData = [
     ]
 ]
 
-let dataSwitch = 0;
+let dataIndex = 0;
+let dataLength = mockData.length;
 
 http.createServer((req, res) => {
     console.log(req.url);
-    let data = mockData[dataSwitch];
-    dataSwitch ^= 1;
+    switch (req.url) {
+        case '/vehicles.json':
+            // console.log(dataIndex);
+            let data = mockData[dataIndex];
+            dataIndex = (dataIndex + 1) % dataLength;
+            res.writeHead(200, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify(data));
+            break;
 
-    res.writeHead(200, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify(data));
+        default:
+            res.writeHead(404);
+            res.end();
+            break;
+    }
 }).listen(PORT);
