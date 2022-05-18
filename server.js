@@ -4,8 +4,8 @@ const PORT = 8080;
 
 console.log('Server started');
 
-const mockData = [
-    [
+const mockData = {
+    a: [
         {
             "_id": "1d7df7a80139c9c0312b1121",
             "type": "tractor", // tractor | drone
@@ -43,7 +43,7 @@ const mockData = [
             }
         }
     ],
-    [
+    b: [
         {
             "_id": "1d7df7a80139c9c0312b1121",
             "type": "tractor", // tractor | drone
@@ -81,18 +81,17 @@ const mockData = [
             }
         }
     ]
-]
+}
 
-let dataIndex = 0;
-let dataLength = mockData.length;
+let dataFlag = 'a';
 
 http.createServer((req, res) => {
     console.log(req.url);
     switch (req.url) {
         case '/vehicles.json':
-            // console.log(dataIndex);
-            let data = mockData[dataIndex];
-            dataIndex = (dataIndex + 1) % dataLength;
+            console.log(dataFlag);
+            let data = mockData[dataFlag];
+            dataFlag = dataFlag === 'a' ? 'b' : 'a';
             res.writeHead(200, { 'Content-Type': 'application/json' })
             res.end(JSON.stringify(data));
             break;
