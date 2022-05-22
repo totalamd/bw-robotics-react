@@ -1,11 +1,7 @@
 {
-  "name": "react",
+  "name": "bw-robotics-react",
   "version": "1.0.0",
-  "description": "React example starter project",
-  "keywords": [
-    "react",
-    "starter"
-  ],
+  "description": "BWR - FE Coding Task",
   "main": "src/index.js",
   "dependencies": {
     "leaflet": "^1.8.0",

@@ -1,7 +1,6 @@
 let http = require("http");
 
 const PORT = 8080;
-
 console.log('Server started');
 
 const mockData = {
@@ -89,10 +88,12 @@ http.createServer((req, res) => {
     console.log(req.url);
     switch (req.url) {
         case '/vehicles':
-            console.log(dataFlag);
             let data = mockData[dataFlag];
             dataFlag = dataFlag === 'a' ? 'b' : 'a';
-            res.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" })
+            res.writeHead(200, {
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*"
+            })
             res.end(JSON.stringify(data));
             break;
 
