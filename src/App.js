@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "./styles.css";
+import "./styles.css"; // Styles should be divided by component in a big project
 
 import Main from "./Main";
 import Navbar from "./Navbar";

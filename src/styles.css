@@ -36,7 +36,7 @@ body {
 .Navbar__Logo {
   flex: 0 0 300px;
   height: 85px;
-  background: url(logo.png) center no-repeat;
+  background: url(img/logo.png) center no-repeat;
 }
 
 .Menu {
