@@ -7,7 +7,7 @@ export default function Menu() {
   let menuItems = menuItemsArray.map(item => <div className="Menu__Item" key={item}>{item}</div>);
 
   function handleClick() {
-    setMenu(!showMenu);
+    setMenu(showMenu => !showMenu);
   }
 
   return (
