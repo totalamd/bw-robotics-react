@@ -1,6 +1,6 @@
 # BWR - FE Coding Task
 
-## bw-robotics-react [Andrei Soifer]
+## bw-robotics-react
 
 ### Mock Data Server
 
