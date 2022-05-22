@@ -23,7 +23,7 @@ export default function Map(props) {
         setVehicleData(res);
       }, err => {
         console.warn('Vehicle data loading error:', err);
-        // show error toast etc
+        // show error toast, increase update interval etc
       })
   }
 
