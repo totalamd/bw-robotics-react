@@ -5,13 +5,17 @@ import Main from "./Main";
 import Navbar from "./Navbar";
 
 export default function App() {
-  const [companyName, setCompanyName] = useState("O'coffee Brazil"); // get this from the server
-  const [modeName, setModeName] = useState("Vehicles"); // get this from the server
+  const [customer, setCustomer] = useState({  // get this from the server
+    customerId: 123,
+    name: "O'coffee Brazil",
+    dataUrl: "http://127.0.0.1:8080"
+  });
+  const [mode, setMode] = useState({ type: "vehicles", name: "Vehicles" });  // different Views
 
   return (
     <div className="App">
-      <Navbar title={companyName} mode={modeName} />
-      <Main />
+      <Navbar title={customer.name} mode={mode.name} />
+      <Main mode={mode.type} dataSource={customer.dataUrl} />
     </div>
   );
 }
