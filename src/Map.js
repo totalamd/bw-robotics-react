@@ -24,11 +24,9 @@ export default function Map(props) {
   useEffect(() => {
     let timer = null;
     timer = setInterval(() => {
-      console.log(timer);
       fetchData()
     }, 5000);
     return (() => {
-      console.log('EXITING, ', timer);
       clearInterval(timer);
     });
   }, []);

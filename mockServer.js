@@ -23,7 +23,7 @@ const mockData = {
             "type": "drone",
             "createdAt": "2020-04-11T17:33:53.119Z",
             "updatedAt": "2020-04-11T18:33:53.119Z",
-            "status": "unreachable",
+            "status": "on-mission",
             "location": {
                 "latitude": "37.42771617807276",
                 "longitude": "-122.09255464861556",
