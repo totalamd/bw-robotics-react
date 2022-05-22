@@ -81,18 +81,18 @@ const mockData = {
             }
         }
     ]
-}
+};
 
 let dataFlag = 'a';
 
 http.createServer((req, res) => {
     console.log(req.url);
     switch (req.url) {
-        case '/vehicles.json':
+        case '/vehicles':
             console.log(dataFlag);
             let data = mockData[dataFlag];
             dataFlag = dataFlag === 'a' ? 'b' : 'a';
-            res.writeHead(200, { 'Content-Type': 'application/json' })
+            res.writeHead(200, { 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" })
             res.end(JSON.stringify(data));
             break;
 
