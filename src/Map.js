@@ -7,7 +7,7 @@ import markerGreen from "./img/marker-green.png";
 import markerYellow from "./img/marker-yellow.png";
 
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, useMap, Popup, Tooltip } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
 
 export default function Map(props) {
   const updateInterval = 4 * 1000; // may be specified by config/customer settings
